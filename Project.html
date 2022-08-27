@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>test</title>
+    </head>
+    <body>
+        <h1>Users Title!!</h1>
+        <ul id="list" ></ul>
+        <!-- <p id="para"></p> -->
+    </body>
+
+    <script>
+
+        fetch("https://jsonplaceholder.typicode.com/albums").then((res)=>{
+            return res.json();
+        }).then((res)=>{
+            // var cnt=0;
+            res.map((val)=>{
+                if(val.userId!==3 && val.userId!=5){
+                    // cnt++;
+                    // console.log(val);
+                    // document.getElementById("list").innerHTML=val.title;
+                    var ul = document. getElementById("list");
+                    var li = document. createElement("li");
+                    li.appendChild(document.createTextNode(val.title));
+                    ul.appendChild(li);
+                }
+            })
+            // console.log(cnt);
+        })
+
+    </script>
+
+</html>
